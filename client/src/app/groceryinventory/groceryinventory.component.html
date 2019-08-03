@@ -1,0 +1,25 @@
+<form #form class="form-inline my-3 justify-content-around">
+  <input type="text" placeholder="item" name="item" class="form-control">
+  <input type="text" placeholder="quantity" name="quantity"  class="form-control">
+  <input type="text" placeholder="price" name="price"  class="form-control">
+  <button class="btn btn-primary" (click)="add(form)">Add</button>
+</form>
+
+<table class="table col-11 mx-auto text-center">
+  <thead class="thead-dark">
+    <tr>
+      <th>Item</th>
+      <th>Quantity</th>
+      <th>Price</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of items; let i = index;">
+      <td>{{item.name}}</td>
+      <td>{{item.quantity}}</td>
+      <td>{{item.price}}</td>
+      <td style="cursor: pointer;" (click) = "deleteItem(i)"><img src="../../assets/icons/baseline-delete_outline-24px.svg" alt=""></td>
+    </tr>
+  </tbody>
+</table>

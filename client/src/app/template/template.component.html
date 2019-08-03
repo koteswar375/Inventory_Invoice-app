@@ -1,0 +1,28 @@
+<ng-template>
+   <div >This is a template</div>
+</ng-template>
+
+------------------------
+
+<ng-container *ngFor = "let num of [1,2,null,3]">
+  <div *ngIf="num">{{num}}</div>
+</ng-container>
+
+-----------------------------
+
+<ng-content  select="h1"></ng-content>
+<ng-content select="p"></ng-content>
+<ng-content></ng-content>
+
+------------------------
+<hr>
+<ng-container *ngTemplateOutlet="greet"></ng-container>
+<hr>
+<ng-container *ngTemplateOutlet="eng; context: myContext"></ng-container>
+<hr>
+<ng-container *ngTemplateOutlet="svk; context: myContext"></ng-container>
+<hr>
+
+<ng-template #greet><span>Hello</span></ng-template>
+<ng-template #eng let-name><span>Hello {{name}}!</span></ng-template>
+<ng-template #svk let-person="localSk"><span>Ahoj {{person}}!</span></ng-template>

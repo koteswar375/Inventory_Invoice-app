@@ -1,0 +1,11 @@
+<div class="d-flex justify-content-center position-absolute mx-3" style="bottom:1rem;">
+  <div *ngFor= "let item of items" class="card text-white bg-info ">
+    <div class="card-header">{{item.name}}</div>
+    <div class="card-body">
+      <ul>
+        <li>Quantity {{item.quantity}}</li>
+        <li>Price {{item.price}}</li>
+      </ul>
+    </div>
+  </div>
+</div>
